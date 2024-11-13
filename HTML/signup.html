@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>Registration</title>
+    <link href="../CSS/bootstrap1.min.css" rel="stylesheet" />
+    <link href="../CSS/singup.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="Registration">
+        <h2>Registration</h2>
+        <div class="inputs">
+            <input id="fullName" type="text" placeholder="Full name" />
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="inputs">
+            <input id="email" type="email" placeholder="Email address" />
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="inputs">
+            <input id="dob" type="date" />
+        </div>
+        <div class="inputs">
+            <input id="password" type="password" placeholder="Password" />
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="inputs">
+            <input id="confirmPassword" type="password" placeholder="Confirm Password" />
+            <i class="fas fa-lock"></i>
+        </div>
+
+        <button class="btn btn-success">Create an account</button>
+    </div>
+
+    <script src="../JS/jquery-3.7.1.js"></script>
+    <script src="bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                let valid = true;
+
+                $('.inputs input').each(function () {
+                    if ($(this).val() == '') {
+                        valid = false;
+                        $(this).css('border', '1px solid red');
+                    } else {
+                        $(this).css('border', '');
+                    }
+                });
+
+                //const password = $('#password').val();
+                //const confirmPassword = $('#confirmPassword').val();
+                //if (password != confirmPassword) {
+                //    valid = false;
+                //    $('#confirmPassword').css('border', '1px solid red');
+                //    alert('Passwords do not match.');
+                //}
+
+                if (valid) {
+                    alert('Account created successfully!');
+                } else {
+                    alert('Please fill out all fields correctly.');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
